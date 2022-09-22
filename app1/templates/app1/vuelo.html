@@ -1,0 +1,37 @@
+{% extends "app1/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Esta página mostrará los vuelos.
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+Hay muchos vuelos.
+
+<div>
+
+    <p>Estas buscando el vuelo con lugar de salida: {{busqueda}}</p>
+
+    {% for vuelo in vuelos %}
+
+        <ul>
+            <li>Numero de vuelo: {{vuelo.id_vuelo}}</li>
+            <li>Salida: {{vuelo.salida}}</li>
+            <li>Destino: {{vuelo.destino}}</li>
+            <li>Dia: {{vuelo.fecha}}</li>
+            <li>Hora de salida: {{vuelo.hora_de_salida}}</li>
+            <li>------------------------------------</li>
+
+        </ul>
+        
+    {% endfor %}
+
+</div>
+
+{% endblock %}

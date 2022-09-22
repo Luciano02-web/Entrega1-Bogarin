@@ -1,0 +1,34 @@
+{% extends "app1/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Esta página mostrará los Pasajeros.
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+Hay muchos pasajeros.
+<div>
+
+    <p>Estás buscando los pasajeros con número de vuelo: {{busqueda_pasa}}</p>
+
+    {% for pasajero in pasajeros %}
+
+        <ul>
+            <li>Nombre: {{pasajero.nombre}}</li>
+            <li>Apelido: {{pasajero.apellido}}</li>
+            <li>Documento: {{pasajero.documento}}</li>
+            <li>Numero de vuelo: {{pasajero.id_vuelo}}</li>
+            <li>------------------------------------</li>
+
+        </ul>
+        
+    {% endfor %}
+
+</div>
+{% endblock %}
